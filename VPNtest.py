@@ -11,7 +11,10 @@ import requests
 #url='http://www.baidu.com'
 
 #测试墙外域名
-url='https://www.google.com'
+url='https://www.google.com/'
+
+#IP查询
+url='http://ip.chinaz.com/'
 
 #设置代理端口
 proxies = {'https': 'https://127.0.0.1:1080', 'http': 'http://127.0.0.1:1080'}
@@ -20,7 +23,7 @@ proxies = {'https': 'https://127.0.0.1:1080', 'http': 'http://127.0.0.1:1080'}
 res=requests.get(url, proxies=proxies, verify=False)
 
 #不使用代理
-#res=requests.get(url, verify=False)
+res=requests.get(url, proxies=False, verify=False)
 
 if(res.status_code==200):
     print('翻墙成功')
